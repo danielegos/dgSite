@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Document</title>
+		<style>
+			body{
+				/* overscroll-behavior: none; */
+				font-family: "Garamond";
+				color:#111
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				width: 100vw;
+				height: 100vh;
+				border: 0px solid #f00;
+				/* overflow: hidden; */
+			}
+			canvas{
+				display: block;
+			}
+			.curtain{
+				width: 25%;				
+				right: 0px;
+				position: absolute;
+				height: 100%;
+				background: white;
+				z-index: 100;
+				mix-blend-mode: difference;
+				/* overflow: hidden;			 */
+				transition: height .01s ease; /* Smooth transition */			
+			}
+			.curtain_body{
+				width: 75%;
+				position: fixed;
+				height: 100%;
+				background: white;
+				/*mix-blend-mode: difference;*/
+				z-index: 100;
+				/* overflow: hidden;	 */
+				transition: height .01s ease; /* Smooth transition */	
+			
+			}
+			h1 {
+				font-family: 'Garamond', sans-serif;
+				padding: 50px;
+			}
+			.right-aligned {
+				text-align: right;
+				font-family: 'Garamond', sans-serif;
+				padding-right:50px;
+			}
+			a {
+            color: black; /* Default color */
+            text-decoration: none; /* Underline by default */
+			}
+
+			/* Style for the link when hovered */
+			a:hover {
+				color: blue; /* Change color on hover */
+				text-decoration: none; /* Remove underline on hover */
+			}
+
+			/* Style for the link when visited */
+			a:visited {
+				color: none; /* Change color after clicking */
+			}
+
+			/* Optional: Remove underline on hover */
+			a:focus {
+				outline: none; /* Optional: Remove outline on focus */
+			}
+
+			header h1 {
+            margin: 0;
+			}
+			.container {
+				width: 80%;
+				margin: 0 auto;
+				padding: 0em;
+			}
+			h2 {
+				color: #4CAF50;
+			}
+			ul {
+				list-style-type: none;
+				padding: 0;
+			}
+			li {
+				margin-bottom: 10px;
+			}
+			.contact-info a {
+				text-decoration: none;
+				color: #4CAF50;
+			}
+			.skills, .education, .experience {
+				margin-top: 20px;
+			}
+			footer {
+				text-align: center;
+				padding: 1em;
+				background-color: #fff;
+				color: #111;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="curtain">
+			<h1><a href="index.html">Daniel Gallegos</h1>
+			<!--<h2 class="right-aligned"><a href="projects.html">Projects</a></h2>-->
+			<h2 class="right-aligned"><a href="about.html">About Me</a></h2>
+			<!-- <h2 class="right-aligned"><a href="education.html">Education</a></h2> -->
+
+		</div>
+		<div class="curtain_body">
+			<header>
+				<h1>About Me</h1>
+			</header>
+		
+			<div class="container">
+				<section class="bio">
+					<h2>Summary</h2>
+					<p>
+						I am an Adjunct Faculty member at Biola University with expertise in 
+						computational biology and philosophy of science. I have experience 
+						in academia and industry, specializing in regulatory affairs and data 
+						science. I'm passionate about public speaking, research, and healthcare 
+						innovation.
+					</p>
+				</section><br>
+		
+				<section class="contact-info">
+					<h2>Contact and Portfolio Links</h2>
+					<ul>
+						<li>Email: <a href="mailto:daniel@danielgallegos.me">daniel@danielgallegos.me</a></li>
+						<li>LinkedIn: <a href="https://www.linkedin.com/in/-daniel-gallegos/" target="_blank">https://www.linkedin.com/in/-daniel-gallegos/</a></li>
+						<li>GitHub: <a href="https://github.com/danielegos" target="_blank">https://github.com/danielegos</a></li>
+						<li>YouTube: <a href="https://www.youtube.com/@daniel.gallegos" target="_blank">https://www.youtube.com/@daniel.gallegos</a></li>
+					</ul>
+				</section>
+		
+				<section class="skills">
+					<h2>Top Skills</h2>
+					<ul>
+						<li>Research • Software Projects • Public Speaking</li>
+					</ul>
+				</section>				
+				
+		
+				<section class="experience">
+					<h2>Experience</h2>
+					<p><strong>Biola University</strong><br>
+					Adjunct Faculty, Department of Biological Sciences (January 2024 - Present)<br>
+					</p>
+					<p><strong>Pac-Dent, Inc.</strong><br>
+					Regulatory Affairs Specialist (February 2024 - June 2024)<br>
+					</p>
+					<p><strong>23andMe</strong><br>
+					Regulatory Affairs Coordinator (May 2022 - June 2023)<br>
+					</p>
+				</section>
+		
+				<section class="education">
+					<h2>Education</h2>
+					<ul>
+						<li>Master of Science - Computer Science, University of Texas at Austin (2025 - 2027)</li>
+						<li>Master of Arts - Science and Religion, Biola University (2020 - 2025)</li>
+						<li>Bachelor of Science - Computer Science, Western Governors University (2023 - 2025)</li>
+						<li>Bachelor of Science - Biology, Western Washington University (2016 - 2019)</li>
+					</ul>
+				</section>
+
+				<br>
+				<p>&copy; 2025 Daniel Gallegos</p>
+
+			</div>
+		
+			<footer>
+				<!-- <p>&copy; 2025 Daniel Gallegos</p> -->
+			</footer>
+		</div>
+		<div id="container"></div>
+		<!--
+		<script>
+			document.addEventListener('mousemove', function(event) {
+			  // Get the mouse Y position relative to the viewport
+			  const mouseY = event.clientY;
+		
+			  // Set the curtain height based on mouse Y position (from 0 to 100%)
+			  const curtain = document.querySelector('.curtain');
+			  curtain.style.height = mouseY + 'px'; // Adjust curtain height
+			});
+		  </script>
+		-->
+		<script type="module" src="about.js"></script>
+	</body>
+</html>>
